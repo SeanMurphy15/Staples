@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<!--
+#
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+# 
+# http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#  KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+-->
+  <head>
+  <title></title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<meta charset="utf-8">
+
+
+	<!-- iPad/iPhone specific css below, add after your main css >
+	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+	-->
+	<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+	<script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/Cordova2SharedLibPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/DSAContentPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/DSANavigationPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/DSAContactPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/DSASynchronizedDataPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/DSAOAuthPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/DSASyncControlPlugin.js"></script>
+    <script type="text/javascript">
+
+    var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value
+
+
+	// If you want to prevent dragging, uncomment this section
+	/*
+	function preventBehavior(e) 
+	{ 
+      e.preventDefault(); 
+    };
+	document.addEventListener("touchmove", preventBehavior, false);
+	*/
+	
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	/*
+	function handleOpenURL(url)
+	{
+		// TODO: do something with the url passed in.
+	}
+	*/
+	
+	function onBodyLoad()
+	{		
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
+	
+	/* When this function is called, Cordova has been initialized and is ready to roll */
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	function onDeviceReady()
+	{
+		//navigator.notification.alert("Cordova is working");
+        cordova.logger.log("Cordova Log test");
+        
+        if (filePath) {
+            window.location.href = filePath+"/index.html";
+        }
+        cordova.logger.log("File path = "+filePath);
+        
+//        var element = document.getElementById('deviceProperties');
+//
+//        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+//        'Device Cordova: '  + device.cordova + '<br />' +
+//        'Device Platform: ' + device.platform + '<br />' +
+//        'Device UUID: '     + device.uuid     + '<br />' +
+//        'Device Version: '  + device.version  + '<br />';
+
+	}
+                
+    function gotFS(fileSystem) {
+        cordova.logger.log("Cordova gotFS");
+//        window.resolveLocalFileSystemURI("file:///Documents/index.html", onResolveSuccess, fail);
+        fileSystem.root.getFile("index.html", null, gotFileEntry, fail);
+    }
+    
+    function gotFileEntry(fileEntry) {
+        
+        var pathToDocumentsDirectory = fileEntry.toURL();
+        var pathToAttachmentFile;
+        if (pathToDocumentsDirectory.lastIndexOf('/Documents') !=-1)
+        {
+            var indexOfDirectoryFolder = pathToDocumentsDirectory.lastIndexOf('/Documents');
+//            indexOfDirectoryFolder = indexOfDirectoryFolder - 1;
+            //pathToDocumentsDirectory.substring(0,indexOfDirectoryFolder);
+            pathToDocumentsDirectory = new String(pathToDocumentsDirectory.substring(0,indexOfDirectoryFolder));
+            pathToAttachmentFile = pathToDocumentsDirectory + '/Library/Private Documents/index.html';
+            cordova.logger.log("New path ="+pathToAttachmentFile);
+            
+        }
+
+        window.location.href = pathToAttachmentFile;
+//        cordova.logger.log("Cordova gotFileEntry"+'fileEntry');
+        cordova.logger.log("Cordova gotFileEntry"+fileEntry.toURL());
+    }
+        
+    /* Controls handlers*/
+    function onSyncButtonPressed(element)
+    {		
+        window.syncButtonPressed(null, null);
+    }
+
+    function loadTestPage(element)
+    {
+        window.getHTML5BundleFilePath(['Photography_Survey'], function(result) {
+            var returnedObject = eval(result);
+            cordova.logger.log("Cordova gotFileEntry "+returnedObject);
+              window.location.href = returnedObject;
+                                      
+        });
+    }
+    
+    function onResolveSuccess(fileEntry) {
+        cordova.logger.log("onResolveSuccess Library");
+        console.log(fileEntry.name);
+    }
+
+        
+    // Called if something bad happens.
+    //
+    function fail(evt) {
+        console.log(evt.target.error.code);
+    }
+
+    function getRecords(element)
+    {
+        window.getRecordsUsingQuery([document.getElementById('entity-input').value, document.getElementById('query-input').value], function(result) {
+
+                                 //cordova.logger.log("Cordova Log test" + result);
+             var returnedObject = eval(result);
+             alert("Number of records: \r\n" + returnedObject.length);
+                         
+             document.getElementById('myjson').innerHTML=result;
+             
+             var jsondoc = eval('(' + result + ')');
+             
+             if(jsondoc.length > 0){
+                 displayData(jsondoc);
+             }
+             else{
+                 document.getElementById('mytable').innerHTML='No records found!';
+             }
+        });
+    }
+        
+    function createTableRowContent(rowObject, data, cellType){
+        var rowContent = document.createElement(cellType);
+        var cell = document.createTextNode(data);
+        rowContent.appendChild(cell);
+        rowObject.appendChild(rowContent);
+    }
+    
+    function createTableData(rowObject, data){
+        createTableRowContent(rowObject, data, 'td');
+    }
+    
+    function createTableHeader(rowObject, data){
+        createTableRowContent(rowObject, data, 'th');
+    }
+    
+    function displayData(jsonString){
+        
+        var table = document.createElement('table');
+        table.border = "1";
+        
+        var thead = document.createElement('thead');
+        table.appendChild(thead);
+        
+        var row = document.createElement('tr');
+        
+        createTableHeader(row, 'Name');
+        createTableHeader(row, 'Id');
+        createTableHeader(row, 'LastModifiedDate');;
+        
+        thead.appendChild(row);
+        
+        var tbody = document.createElement('tbody');
+        table.appendChild(tbody);
+        
+        for(i=0; i<jsonString.length; i++){
+            var row = document.createElement('tr');
+            
+            createTableData(row, jsonString[i].Name);
+            createTableData(row, jsonString[i].Id);
+            createTableData(row, jsonString[i].LastModifiedDate);
+            
+            tbody.appendChild(row);
+        }
+        
+        document.getElementById('mytable').innerHTML = '';
+        document.getElementById('mytable').appendChild(table);
+    }
+
+        function openURLInsideCurrentView(element) {
+            window.openURL(document.getElementById('url-input').value, function(result) {
+
+                                            console.log("Open URL success");
+                                           }, function(result) {
+                                            console.log("Error");
+                                           });
+        }
+        
+        function getCategory(element) {
+            
+            window.getCategoryContentArray([document.getElementById('category-input').value], function(result) {
+                                        var returnedObject = eval(eval(result));
+                                        console.log("Returned object[0].name ======= " + returnedObject[0].name);
+                                        document.getElementById('category-text').value = JSON.stringify(returnedObject[0]);
+                                           
+                                      }, function(result) {
+                                        console.log("Error");
+                                      });
+        }
+        
+        function openCategorySample(element) {
+            
+            window.openCategory([document.getElementById('openCategoryId-input').value], function(result) {
+                                           var returnedObject = eval(eval(result));
+                                           console.log("Returned object[0].name ======= " + returnedObject[0].name);
+                                           document.getElementById('category-text').value = JSON.stringify(returnedObject[0]);
+                                           
+                                           }, function(result) {
+                                           console.log("Error");
+                                           });
+        }
+        
+        function displayTrack(element) {
+            window.displayContent("/Users/ahegde/Library/Application Support/iPhone Simulator/7.1/Applications/74D7C170-8C01-4E84-8484-8317B9790840/Library/Private Documents/iOS Simulator Screen shot Feb 3, 2014 9.08 [068A0000001DChIIAW].png", function(result) {
+                                    console.log("displayTrack");
+                                  }, function(result) {
+                                    console.log("Error");
+                                  });
+        }
+        
+        function getContentPath(element) {
+            
+            window.getContentPathFromSFID(document.getElementById('categoryId-input').value, function(result) {
+                                          
+                                            console.log("getContentPathFromSFID " + result);
+                                              document.getElementById('category-text').value = JSON.stringify(result);
+                                          }, function(result) {
+                                            console.log("Error");
+                                          });
+        }
+
+        function getContactsList(element) {
+            
+            window.searchContact(document.getElementById('contactName-input').value, function(result) {
+                                          
+                                          console.log("getContactsList " + result);
+                                          document.getElementById('category-text').value = JSON.stringify(result);
+                                          }, function(result) {
+                                          console.log("Error");
+                                          });
+        }
+        
+        function getCheckedInContact(element) {
+            
+            window.checkedInContact('', function(result) {
+                                            var returnedObject = eval(result);
+                                              console.log("getCheckedInContact " + returnedObject[0].Name);
+                                              document.getElementById('category-text').value = JSON.stringify(returnedObject[0]);
+                                          }, function(result) {
+                                              console.log("Error");
+                                          });
+        }
+
+        function getObjectsByIDs(element) {
+            
+            window.get([document.getElementById('getObjectsByIDs-input').value], function(result) {
+                                           var returnedObject = eval(eval(result));
+                                           console.log("Returned object[0].name ======= " + returnedObject[0].name);
+                                           document.getElementById('category-text').value = JSON.stringify(returnedObject);
+                                           
+                                           }, function(result) {
+                                           console.log("Error");
+                                           });
+        }
+        
+        function searchObjects(element) {
+            
+            window.search(document.getElementById('searchObjects-input').value, function(result) {
+                                           var returnedObject = eval(eval(result));
+                                           console.log("Returned object[0].name ======= " + returnedObject[0].name);
+                                           document.getElementById('category-text').value = JSON.stringify(returnedObject[0]);
+                                           
+                                           }, function(result) {
+                                           console.log("Error");
+                                           });
+        }
+
+        function upsertObjects(element) {
+            
+            var array = [
+                         {
+                         "id": "003i0000005hkvsAAA",
+                         "LastName": "TestContact",
+                         "FirstName": "Kamina",
+                         "email": "test@test.com"
+                         },
+                         {
+                         "id": "NEW",
+                         "LastName": "TestContact1",
+                         "FirstName": "Test",
+                         "email": "test1@test.com"
+                         }
+                         ];
+            window.upsert(document.getElementById('upsertObjects-input').value + "," + JSON.stringify(array), function(result) {
+//                          var returnedObject = eval(eval(result));
+//                          console.log("Returned object[0].name ======= " + returnedObject[0].name);
+//                          document.getElementById('category-text').value = JSON.stringify(returnedObject[0]);
+                          
+                          }, function(result) {
+                          console.log("Error");
+                          });
+        }
+
+        function syncObjects(element) {
+            
+            window.deltaSync(document.getElementById('syncObjects-input').value, function(result) {
+                             var returnedObject = eval(eval(result));
+                             console.log("Returned object[0].name ======= " + returnedObject[0].name);
+                             document.getElementById('category-text').value = JSON.stringify(returnedObject[0]);
+                             
+                             }, function(result) {
+                             console.log("Error");
+                             });
+        }
+        
+        function fullSyncObjects(element) {
+            
+            window.fullSync(document.getElementById('fullSyncObjects-input').value, function(result) {
+                            var returnedObject = eval(eval(result));
+                            console.log("Returned object[0].name ======= " + returnedObject[0].name);
+                            document.getElementById('category-text').value = JSON.stringify(returnedObject[0]);
+                            
+                            }, function(result) {
+                            console.log("Error");
+                            });
+        }
+    
+    function OAuthSessionID(element) {
+        window.getOAuthSessionID('test', function(result) {
+                                 var accessToken  = eval(result);
+                                 console.log("getOAuthSessionID " + accessToken );
+                                   document.getElementById('category-text').value = JSON.stringify(accessToken);
+                                 }, function(result) {
+                                 console.log("Error");
+                                 });
+    }
+    
+    function OAuthClientID(element) {
+        
+        window.getOAuthClientID('test', function(result) {
+                                var clientIdStr = eval(result);
+                                console.log("getOAuthClientID " + clientIdStr);
+                                document.getElementById('category-text').value = JSON.stringify(clientIdStr);
+                                }, function(result) {
+                                console.log("Error");
+                                });
+    }
+    function refreshToken(element) {
+        
+        window.getRefreshToken('test', function(result) {
+                               var refreshTokenStr = eval(result);
+                               console.log("refreshToken " + refreshTokenStr);
+                               document.getElementById('category-text').value = JSON.stringify(refreshTokenStr);
+                               }, function(result) {
+                               console.log("Error");
+                               });
+    }
+    function UserAgentId(element) {
+        
+        window.getUserAgent('test', function(result) {
+                            var userAgentStr = eval(result);
+                            console.log("getUserAgent " + userAgentStr);
+                            document.getElementById('category-text').value = JSON.stringify(userAgentStr);
+                            }, function(result) {
+                            console.log("Error");
+                            });
+    }
+    function instanceUrlString(element) {
+        
+        window.getInstanceUrl('test', function(result) {
+                              var instanceUrlStr = eval(result);
+                              console.log("getInstanceUrl " + instanceUrlStr);
+                              document.getElementById('category-text').value = JSON.stringify(instanceUrlStr);
+                              }, function(result) {
+                              console.log("Error");
+                              });
+    }
+    function loginUrlString(element) {
+        
+        window.getLoginUrl('test', function(result) {
+                           var loginUrlStr = eval(result);
+                           console.log("getLoginUrl " + loginUrlStr);
+                             document.getElementById('category-text').value = JSON.stringify(loginUrlStr);
+                           }, function(result) {
+                           console.log("Error");
+                           });
+    }
+    
+
+
+/*          <input type="button" onclick="test(['Type == \'Sold To\' OR Type == nil'])" value="Logout"> <br /> */
+//          <input type="button" onclick="loadTestPage(this)" value="Load test page from Documents folder with name index.html"> <br />
+//      <p id="deviceProperties">Loading device properties...</p>
+    </script>
+  </head>
+  <body onload="onBodyLoad()">
+
+	<h1>Cordova DSA Example</h1>
+
+      <form action="">
+          <input type="button" onclick="onSyncButtonPressed(this)" value="Sync"> <br />
+
+          <textarea rows="20" cols="50" id="category-text">
+          </textarea><br />
+              
+        Get Categories by name:<input type="text" id="category-input" value="India"/>
+          <input type="button" onclick="getCategory(this)" value="Get Category"> <br />
+
+      Open URL :<input type="text" id="url-input" value="https://na14.salesforce.com/a07d0000004jQEY,true,true"/>
+      <input type="button" onclick="openURLInsideCurrentView(this)" value="Open URL"> <br />
+          
+      Display content from SFID:<input type="text" id="contentId-input" value="068A0000001DChIIAW"/>
+      <input type="button" onclick="displayTrack(this)" value="Display content"> <br />
+              
+      Display content from path:<input type="text" id="contentPath-input" value="/Users/ahegde/Library/Application Support/iPhone Simulator/7.1/Applications/74D7C170-8C01-4E84-8484-8317B9790840/Library/Private Documents/iOS Simulator Screen shot Feb 3, 2014 9.08 [068A0000001DChIIAW].png"/>
+      <input type="button" onclick="displayTrack(this)" value="Display content"> <br />
+          
+      Get content path from SFID:<input type="text" id="categoryId-input" value="069A0000001Bu2tIAC"/>
+      <input type="button" onclick="getContentPath(this)" value="getContentPath"> <br />
+
+      Open category using it's name:<input type="text" id="openCategoryId-input" value="India"/>
+      <input type="button" onclick="openCategorySample(this)" value="openCategory"> <br />
+
+      Get contacts list from Name:<input type="text" id="contactName-input" value="Tim Barr"/>
+      <input type="button" onclick="getContactsList(this)" value="getContactsList"> <br />
+
+      Get checked-in contact:<input type="text" id="checkedinContact-output" value=""/>
+      <input type="button" onclick="getCheckedInContact(this)" value="getCheckedInContact"> <br />
+      
+      Get objects by IDs:<input type="text" id="getObjectsByIDs-input" value="00PA00000087tsmMAA,00PA000000DAthDMAT"/>
+      <input type="button" onclick="getObjectsByIDs(this)" value="getObjectsByIDs"> <br />
+
+      Search objects:<input type="text" id="searchObjects-input" value="Attachment,Id,00PA00000087tsmMAA"/>
+      <input type="button" onclick="searchObjects(this)" value="searchObjects"> <br />
+
+      Upsert objects:<input type="text" id="upsertObjects-input" value="Contact"/>
+      <input type="button" onclick="upsertObjects(this)" value="upsertObjects"> <br />
+          
+          deltaSync Objects:<input type="text" id="syncObjects-input"/>
+          <input type="button" onclick="syncObjects(this)" value="syncObjects"><br />
+              
+        fullSync Objects:<input type="text" id="fullSyncObjects-input" value=""/>
+              <input type="button" onclick="fullSyncObjects(this)" value="fullSyncObjects">
+                  <br /><br />
+                  
+                  Test APIs:
+                  DSAOAuth.getOAuthSessionID: <input type="button" onclick="OAuthSessionID(this)" value="sessionId" /> <br />
+                  DSAOAuth.getRefreshToken: <input type="button" onclick="refreshToken(this)" value="refreshToken" /> <br />
+                  DSAOAuth.getOAuthClientID: <input type="button" onclick="OAuthClientID(this)" value="clientId" /> <br />
+                  DSAOAuth.getInstanceUrl: <input type="button" onclick="instanceUrlString(this)" value="instanceUrl" /> <br />
+                  DSAOAuth.getLoginUrl: <input type="button" onclick="loginUrlString(this)" value="loginUrl" /> <br />
+                  DSAOAuth.getUserAgent: <input type="button" onclick="UserAgentId(this)" value="userAgent" /> <br />
+
+        <br />
+        <br />
+              Get Records Using Entity (example: Account):<input type="text" id="entity-input" value="Account"/> <br />
+              And query (example: Name beginswith [C] 'A'):<input type="text" id="query-input" value="Name beginswith [C] 'A'"/>        <input type="button" onclick="getRecords(this)" value="Get">
+      </form>
+      <!-- <img name="jsbutton" src="buyit15.jpg" width="110" height="28" border="0" alt="javascript button"> -->
+      <p>JSON string <div id="myjson"></div></p>
+      <p>Table <div id="mytable"></div></p>
+  </body>
+</html>

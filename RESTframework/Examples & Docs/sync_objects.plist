@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+	<!-- The Objects array is a list of dictionaries, one for each object you'd like to sync.
+	
+	- The "name" field holds the SalesForce name of the object.
+	By default, ALL fields will be synchronized
+	- If present, an "ignore" array can hold a list of fields to ignore.
+	- Similary, an "only" field lists ONLY those fields that should be pulled down.
+	- An "indexes" array contains a list of fields that should be indexed in Core <data>
+	- An "add" array will add additional fields. Each field should be comprised of:
+		"name"		the name of the field
+		"type"		"string", "int", "float", "data", "transform", "bool", or "date" (defaults to "string")
+		"index"		"YES" or "NO" (defaults to "NO")
+	- a "skip_data" boolean, set to "YES" if you don't want to download data fields by default
+	
+	Note that all fields will have columns created in the database.
+	-->
+
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Account</string>
+			<key>only</key>
+			<array>
+				<string>Id</string>
+				<string>Name</string>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Contact</string>
+			<key>ignore</key>
+			<array>
+				<string>FirstName</string>
+			</array>
+		</dict>
+	</array>
+	<key>ignore these</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Contact</string>
+			<key>indexed</key>
+			<array>
+				<string>Name</string>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Product2</string>
+			<key>ignore</key>
+			<array>
+				<string>IsDeleted</string>
+				<string>CurrencyIsoCode</string>
+				<string>LastModifiedById</string>
+				<string>SalesModelAndModifiers__c</string>
+				<string>SystemModstamp</string>
+				<string>CreatedById</string>
+				<string>IsActive</string>
+				<string>CreatedDate</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

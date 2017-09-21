@@ -1,0 +1,74 @@
+@charset "utf-8";
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	color: #666;
+}
+
+td {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+}
+
+th {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+}
+
+.bodystyle {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+}
+
+.small {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 9px;
+}
+
+.medium {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	color: #666;
+}
+
+.big {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 16px;
+}
+
+.xbig {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 24px;
+}
+
+.expanded {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	line-height: 24px;
+	letter-spacing: 2px;
+}
+
+.justified {
+	font-family: Tahoma, Geneva, sans-serif;
+	text-align: justify;
+}
+
+.footer {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 9px;
+	color: #999999;
+}
+
+.box1 {
+	padding: 3px;
+	border-width: medium;
+	border-style: solid;
+	border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 {
+	font-style: italic;
+	word-spacing: 2pt;
+	padding: 3px;
+	border: 1px solid;
+}

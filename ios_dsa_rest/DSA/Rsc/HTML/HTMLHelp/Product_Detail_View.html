@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<title>Product Detail View</title>
+<link href="jquery.mobile-1.0b1.min.css" rel="stylesheet" type="text/css">
+<link href="dsa_jquery_css.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="jquery.mobile-1.0b1.min.js"></script>
+<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="jquery.mobile-1.0b1.js"></script>
+
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div data-role="page" id="help-home"> 
+    
+	<div data-role="content">
+
+		<div class="content-FAQ" data-role="collapsible-set" data-inset="true">
+		<p></p>
+
+		<div data-role="collapsible" data-collapsed="false">
+       		<h3>Entering Product Detail View</h3>
+
+		    <table width="500" border="0" align="center" cellpadding="1" cellspacing="8">
+        	<tr>
+            <td><img src="images/homescreencategories.jpg" width="177" height="237"></td>
+            <td valign="top">Selecting any of the Parent Categories (product families) will take you into the Product Detail View. The Detail View is where you can see the content related to the given category, product or product family.
+            </td>
+          	</tr>
+        	</table>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-theme="b">
+		<h3>Items within the Product Detail View</h3>
+
+		    <table width="550" border="0" align="center" cellpadding="1" cellspacing="8">
+        	<tr>
+            <td><img src="images/productdetailoverview.jpg" alt="" width="162" height="215"></td>
+            <td>
+            <ul data-role="listview" data-dividertheme="b" data-inset="true">
+	        <li><strong>(A) </strong>The background image for this category as configured in Salesforce. If none was selected, the homescreen with appear.</li>
+	        <li><strong>(B) </strong>The title of the selected product, followed by a brief description (from Salesforce data).</li>
+			<li><strong>(C) Related Content</strong> for this product, including brochures, white papers, images, videos, etc., as configured in Salesforce.</li>
+			<li><strong>(D) </strong>The <strong>Product Gallery</strong> allows you to switch the products in the current category by swiping or tapping. </li>
+		</ul>
+			</td>
+          	</tr>
+        	</table>
+		</div>
+        </div><!-- /Content Class -->
+    
+
+
+
+
+	</div>	<!-- /content --> 
+
+<div data-role="footer" data-position="fixed" align="center">
+<h7 class="content-footer"> Digital Sales Aid - Powered by Salesforce Services </h7>
+</div>   	
+    	
+</div><!-- /page -->
+
+</body>
+</html>
+

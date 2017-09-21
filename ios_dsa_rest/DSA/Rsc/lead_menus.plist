@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StatusMenu</key>
+	<dict>
+		<key>Title</key>
+		<string>Program Phase</string>
+		<key>MenuItems</key>
+		<array>
+			<string>Suspect</string>
+			<string>Not Yet Contacted</string>
+			<string>Prospect</string>
+			<string>Prospecting GPO</string>
+			<string>Call Back</string>
+			<string>Constant Contact</string>
+			<string>1st Meeting Scheduled</string>
+			<string>Recontact</string>
+			<string>Customer Service</string>
+			<string>Nurture</string>
+			<string>Dead</string>
+			<string>Non Responsive Telesales</string>
+			<string>For SBD-Too Small</string>
+			<string>For SNA</string>
+			<string>Existing SBA Account</string>
+			<string>Existing SBD Account</string>
+			<string>Existing CADV</string>
+			<string>New Onvia Lead</string>
+			<string>Not Yet Contacted-Oniva Lead</string>
+			<string>Not Yet Contacted-NJPA Prospect</string>
+			<string>Open Lead Queue</string>
+			<string>Qualifying</string>
+			<string>Disqualified Account</string>
+			<string>Moving Forward-Converted</string>
+			<string>Suspect - Not Contacted</string>
+			<string>Prospect - Qualified</string>
+			<string>Prospect - Future Opportunity</string>
+			<string>Invalid Lead</string>
+			<string>Prospect - Not Contacted</string>
+			<string>Lead forwarded to SBD</string>
+			<string>Customer Care (One-time Order)</string>
+			<string>Suspect - Mktg Qualified Lead</string>
+		</array>
+		<key>SelectedIndex</key>
+		<integer>1</integer>
+	</dict>
+	<key>ProspectingWeekMenu</key>
+	<dict>
+		<key>Title</key>
+		<string>Prospecting Week</string>
+		<key>MenuItems</key>
+		<array>
+			<string>1</string>
+			<string>2</string>
+			<string>3</string>
+			<string>4</string>
+			<string>5</string>
+			<string>6</string>
+			<string>7</string>
+			<string>8</string>
+			<string>9</string>
+			<string>10</string>
+			<string>11</string>
+			<string>12</string>
+			<string>13</string>
+			<string>None</string>
+		</array>
+	</dict>
+	<key>StateMenu</key>
+	<dict>
+		<key>Title</key>
+		<string>State/Province</string>
+		<key>MenuItems</key>
+		<array>
+			<string>AL</string>
+			<string>AK</string>
+			<string>AZ</string>
+			<string>AR</string>
+			<string>CA</string>
+			<string>CO</string>
+			<string>CT</string>
+			<string>DE</string>
+			<string>DC</string>
+			<string>FL</string>
+			<string>GA</string>
+			<string>HI</string>
+			<string>ID</string>
+			<string>IL</string>
+			<string>IN</string>
+			<string>IA</string>
+			<string>KS</string>
+			<string>KY</string>
+			<string>LA</string>
+			<string>ME</string>
+			<string>MD</string>
+			<string>MA</string>
+			<string>MI</string>
+			<string>MN</string>
+			<string>MS</string>
+			<string>MO</string>
+			<string>MT</string>
+			<string>NE</string>
+			<string>NV</string>
+			<string>NH</string>
+			<string>NJ</string>
+			<string>NM</string>
+			<string>NY</string>
+			<string>NC</string>
+			<string>ND</string>
+			<string>OH</string>
+			<string>OK</string>
+			<string>OR</string>
+			<string>PA</string>
+			<string>RI</string>
+			<string>SC</string>
+			<string>SD</string>
+			<string>TN</string>
+			<string>TX</string>
+			<string>UT</string>
+			<string>VT</string>
+			<string>VA</string>
+			<string>WA</string>
+			<string>WV</string>
+			<string>WI</string>
+			<string>WY</string>
+			<string>AB</string>
+			<string>BC</string>
+			<string>MB</string>
+			<string>NB</string>
+			<string>NL</string>
+			<string>NT</string>
+			<string>NS</string>
+			<string>NU</string>
+			<string>ON</string>
+			<string>PE</string>
+			<string>QC</string>
+			<string>SK</string>
+			<string>YT</string>
+			<string>Vancouver</string>
+			<string>Calgary</string>
+			<string>Edmonton/Grand Prairie</string>
+			<string>Saskatchewan</string>
+			<string>Winnipeg</string>
+			<string>Ontario</string>
+			<string>Montreal/Maritimes</string>
+			<string>Ottawa</string>
+		</array>
+	</dict>
+	<key>SalutationMenu</key>
+	<dict>
+		<key>Title</key>
+		<string>Salutation</string>
+		<key>MenuItems</key>
+		<array>
+			<string>Mr.</string>
+			<string>Mrs.</string>
+			<string>Ms.</string>
+			<string>Dr.</string>
+			<string>Prof.</string>
+			<string>1SG</string>
+			<string>2LT</string>
+			<string>COL</string>
+			<string>CPL</string>
+			<string>CPT</string>
+			<string>CSM</string>
+			<string>LTC</string>
+			<string>MAJ</string>
+			<string>MSG</string>
+			<string>PFC</string>
+			<string>PVT</string>
+			<string>SFC</string>
+			<string>SGM</string>
+			<string>SGT</string>
+			<string>SPC</string>
+			<string>SSG</string>
+		</array>
+	</dict>
+	<key>TitleGroupingMenu</key>
+	<dict>
+		<key>Title</key>
+		<string>Title Grouping</string>
+		<key>MenuItems</key>
+		<array>
+			<string>C-Level</string>
+			<string>Director-Level</string>
+			<string>Mid-Level Manager</string>
+			<string>Administrative or Staff</string>
+		</array>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,76 @@
+The Model Metrics REST Salesforce Framework (MM_RSF)
+
+- full or partial object syncing
+- dependent pick lists
+- full metadata downloads
+- push back up to server
+- full ARC compatibility 
+- Core Data backed offline storage and access
+
+
+When using the MM_RSF, a few set up steps are required.
+
+1. Generate a list of objects to pull down. This can be provided via a variety of methods (included in the app, downloaded, etc). By default, if present, a sync_objects.plist is used. To use your own, call the -[MM_OrgMetaData setAllObjectsToSync:] method and pass your array of objects. 
+
+Each object in your array is comprised of a dictionary. The only required field is "name", which is is the API name of the object you want to pull down. By default, ALL objects, and ALL fields on those objects, are pulled down. The following fields let you custom these behaviors:
+
+	filter			This is a "where" statement that gets passed when querying for objects.
+					ex. "Status__c = 'Open'"		(omit the double quotes)
+					
+	onlyList		the list of fields to pull down, in case you don't want ALL of them
+	
+	ignoreList		fields to skip (such as large data fields).
+	
+	extra-query		fields to add to the query
+	
+	extra-device	fields that are created for on-device storage only
+	
+	fetch-limit		passed in to SOQL queries as the LIMIT option
+
+	fetch-order		passed in to SOQL queries as the ORDER option
+
+	disable-initial-blob-download	set this to YES to disable downloading attachments, documents, and other data blobs during the initial sync process
+	
+
+2. In your -[appDelegate didFinishLaunching:] method, you'll want to call +[MM_LoginViewController presentModallyInParent:], and pass in the root view controller
+
+	You'll also need to set the redrectURI, loginDomain, and remoteAccessConsumerKey properties. Optionally, you can set a preloadedUsername and preloadedPassword for testing. The canCancel, canToggleServer, and useTestServer are all also useful in testing, and are documented in the class header file.
+
+3. When the user logs in and grants access, the MM_LoginViewController will post a kNotification_LoginComplete notification. Here is where you can initiate your initial synchronization procedure, to pull down data for offline use.
+
+Here's a sample method that first checks to make sure the object list has been downloaded, then checks for all required meta data, and finally performs the sync:
+
+- (void) loginComplete {
+	MM_SyncManager			*syncMgr = [MM_SyncManager sharedManager];
+	
+	[SA_ConnectionQueue sharedQueue].activityIndicatorCount++;
+	if (![MM_OrgMetaData sharedMetaData].areAllObjectsToSyncPresent) {
+		[syncMgr downloadObjectDefinitionsWithCompletionBlock: ^{
+			[syncMgr fetchRequiredMetaData: NO withCompletionBlock: ^{
+				if ([MM_Config sharedManager].startupSyncRequired) 
+					[syncMgr synchronize: nil withCompletionBlock: completionBlock];
+				[SA_ConnectionQueue sharedQueue].activityIndicatorCount--;
+			}];
+		}];
+	} else {
+		[syncMgr fetchRequiredMetaData: NO withCompletionBlock: ^{
+			if ([MM_Config sharedManager].startupSyncRequired) 
+				[syncMgr synchronize: nil withCompletionBlock: completionBlock];
+			[SA_ConnectionQueue sharedQueue].activityIndicatorCount--;
+		}];
+	}
+}
+
+Note: there are a few nested blocks, as each step is required before the next one can take place. There are other ways to do this (such as a state machine), but this is the most compact.
+
+
+
+4. By default, all synchronizations after the first are deltas, using a lastModifiedDate filter on the SOQL query. 
+
+To perform a standard (delta) sync, simply call -[MM_SyncManager synchronize:withCompletionBlock:], and pass a list of MM_SFObjectDefinitions as the first argument. You may also pass nil to use your list of all objects to sync.
+
+If you'd like to re-pull ALL data down, you may call -[MM_SyncManager fullResync:withCompletionBlock:].
+
+5. The framework makes extensive use of the parent/child context relationship structure made possible by iOS 5. For simplicity and thread safety, never access [MM_ContextManager sharedManager].mainContentContext directly; instead, call -[MM_ContextManager contentContextForWriting].
+
+6. To edit an object, create a local context for the object and retrieve that context's version of the object. Before presenting any editing UI or changing fields, call -beginEditing on that object. This makes a copy of all fields and relationships present in the object. When editing is complete, call -finishEditingSavingChanges:, passing either YES to save changes (and push them up to the server) or NO. Changes will be pushed up to Salesforce immediately if online, or the next time a connection is available.

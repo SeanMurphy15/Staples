@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="SFChange" representedClassName="MM_SFChange" syncable="YES">
+        <attribute name="action" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="error" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="extra" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="inProgress" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isNewObject" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="modifiedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modifiedValuesData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="originalValuesData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ownerSFID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="queuedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetEntity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetObjectID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetSalesforceID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="SFObjectDefinition" representedClassName="MM_SFObjectDefinition" syncable="YES">
+        <attribute name="activateable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="canFilterOnLastModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="checkingForDeletedObjects_mm" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="createable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="custom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="customSetting" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="deletable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="deprecatedAndHidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="feedEnabled" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="fullSyncCompleted_mm" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="fullSyncInProgress_mm" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="keyPrefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelPlural" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSyncedAt_mm" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastSyncError_mm" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="layout_mm" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="layoutable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="linkRequiredTag" optional="YES" attributeType="Integer 32" defaultValueString="1" syncable="YES"/>
+        <attribute name="mergeable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="metaDescription_mm" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="metaLayout_mm" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="moreResultsURL_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectName_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="queryable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="replicateable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="retrieveable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="searchable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="serverObjectCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="serverObjectName_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="syncInfo_mm" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="triggerable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="undeletable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="updateable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="urls" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SFChange" positionX="160" positionY="192" width="128" height="270"/>
+        <element name="SFObjectDefinition" positionX="160" positionY="192" width="128" height="585"/>
+    </elements>
+</model>

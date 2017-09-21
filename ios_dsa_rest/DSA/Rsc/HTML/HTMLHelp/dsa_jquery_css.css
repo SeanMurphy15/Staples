@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@media only screen and (orientation:portrait){
+
+.ui-mobile #help-home {
+	background-color: #e5e5e5;
+	background-image: url(images/Help_Background.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+}
+
+
+	.content-glassman_img {
+	text-align: left;
+	width: 500px;
+	border-top: 0;
+	left: 150px;
+	top: 100px;
+	position: absolute;
+	}
+
+	.content-secondary {
+	text-align: left;
+	width: 500px;
+	border-top: 0;
+	left: 150px;
+	top: 400px;
+	position: absolute;
+	}
+	
+	.content-FAQ {
+	text-align: left;
+	width: 550px;
+	border-top: 0;
+	left: 120px;
+	top: 90px;
+	position: absolute;
+	}
+	
+	
+}
+
+@media only screen and (orientation:landscape){
+.ui-mobile #help-home {
+	background-color: #e5e5e5;
+	background-image: url(images/Help%20Background%20Landscape.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+}
+
+	.content-glassman_img {
+	text-align: left;
+	width: 300px;
+	border-top: 0;
+	left: 80px;
+	top: 260px;
+	position: absolute;
+	}
+	.content-secondary {
+	text-align: left;
+	width: 500px;
+	border-top: 0;
+	left: 420px;
+	top: 200px;
+	position: absolute;
+	}
+	
+	.content-FAQ {
+	text-align: left;
+	width: 550px;
+	border-top: 0;
+	left: 220px;
+	top: 150px;
+	position: absolute;
+	}
+}
+
+.content-footer {
+	font-size: 10px;
+	text-align: center;
+}

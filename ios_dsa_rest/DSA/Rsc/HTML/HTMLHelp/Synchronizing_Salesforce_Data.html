@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<title>Synchronizing Salesforce Data</title>
+<link href="jquery.mobile-1.0b1.min.css" rel="stylesheet" type="text/css">
+<link href="dsa_jquery_css.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="jquery.mobile-1.0b1.min.js"></script>
+<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="jquery.mobile-1.0b1.js"></script>
+
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div data-role="page" id="help-home"> 
+    
+   	<div data-role="content">
+
+<div data-role="content">
+   	  <div class="content-FAQ" data-role="collapsible-set" data-inset="true">
+		<p></p>
+
+      <div data-role="collapsible" data-collapsed="false" data-theme="b">
+        <h3>Synchronization Process</h3>
+        <table width="500" border="0" align="center" cellpadding="1" cellspacing="8">
+          <tr>
+            <td><img src="images/IMG_0027.jpg" alt="Sync" width="182" height="242" /></td>
+            <td valign="top">After a sucessful login, the app synchronizes with Salesforce and downloads all the content and contacts to which you have access.
+              <p>Actual downloaded content is defined by the security rules in Salesforce.</p></td>
+          </tr>
+        </table>
+      </div>
+
+        <div data-role="collapsible" data-collapsed="False">
+        <h3>Sync Timeframes</h3>
+        <table width="500" border="0" align="center" cellpadding="1" cellspacing="8">
+          <tr>
+            <td>
+            <table width="287" border="0">
+          <tr>
+            <th width="122" scope="row"><strong>Data Size</strong></th>
+            <th width="149" align="center">Download Time (estimated WiFi)</th>
+          </tr>
+          <tr>
+            <td align="left" scope="row"><div align="center">up to 100 MB</div></td>
+            <td align="left"><div align="center">10 minutes</div></td>
+          </tr>
+          <tr>
+            <td align="left" scope="row"><div align="center">500 MB</div></td>
+            <td align="left"><div align="center">20 minutes</div></td>
+          </tr>
+          <tr>
+            <td align="left" scope="row"><div align="center">1GB MB</div></td>
+            <td align="left"><div align="center">45 minutes</div></td>
+          </tr>
+          <tr>
+            <td align="left" scope="row"><div align="center">2GB MB</div></td>
+            <td align="left"><div align="center">&gt; 1Hr</div></td>
+          </tr>
+      </table></td>
+            <td valign="top"><p>Download time based on:<br />
+              1. Number of contacts accessible to you in Salesforce.com<br />
+              </p>
+              <p>2. Amount of content set to be downloaded to the app<br />
+              </p>
+              <p>3. Internet connection </p></td>
+          </tr>
+        </table>
+	  	</div>
+
+        <div data-role="collapsible" data-collapsed="true" data-theme="b">
+        <h3>Important Notes on Sync</h3>
+		<p>It is important that you do not switch tasks or apps while the sync is in progress, especially if you have a large set of data and contacts. 
+        
+        Switching tasks during sync may result in the application closing.  If this happens, you will need to sync again.
+        </p>
+		</div>
+
+  </div>
+    
+	</div><!-- /content --> 
+
+    
+	</div><!-- /content --> 
+
+<div data-role="footer" data-position="fixed" align="center">
+<h7 class="content-footer"> Digital Sales Aid - Powered by Salesforce Services </h7>
+</div>   	
+    	
+</div><!-- /page -->
+</body>
+</html>

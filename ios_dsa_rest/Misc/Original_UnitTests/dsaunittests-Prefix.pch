@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'dsaunittests' target in the 'dsaunittests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#import "SA_Base.h"
+#endif
+
+#define USE_LIMITED_SF_PROPERTIES_FOR_SYNC 1
+#define	NAMESPACE			@"ModelM__"
+
+#import "DSA_Defines.h"
+#import "PrefixCommon.h"

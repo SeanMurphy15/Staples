@@ -1,0 +1,4 @@
+The old v3 based version of app uses the Staples_DSA RESTframework branch
+The new v4 based version of app uses the Staples_DSAv4 RESTframework branch
+
+Define MMREST_STAPLES in Xcode->Preferences->Locations->Source Trees to set location of RESTframework (not MMREST)

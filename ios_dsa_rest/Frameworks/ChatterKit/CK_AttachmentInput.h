@@ -1,0 +1,57 @@
+//
+//  CK_AttachmentInput.h
+//  chatterkitdemo
+//
+//  Created by Guy Umbright on 8/28/12.
+//  Copyright (c) 2012 Model Metrics, Inc.. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface CK_AttachmentInput : NSObject
+- (NSString*) attachmentInputType;
+- (NSDictionary*) asDictionary;
+@end
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+@interface CK_AttachmentInputExistingContent : CK_AttachmentInput
+
+@property (nonatomic, copy) NSString* contentDocumentId;
+
++ (CK_AttachmentInputExistingContent*) attachmentWithExistingContent:(NSString*) contentDocumentId;
+@end
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+//@interface CK_AttachmentInputFeedPoll : CK_AttachmentInput
+//
+//@property (nonatomic, copy) NSArray* choices;
+//
+//+ (CK_AttachmentInputFeedPoll*) attachmentWithFeedPoll:(NSArray*) choices;
+//@end
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+@interface CK_AttachmentInputLink : CK_AttachmentInput
+
+@property (nonatomic, copy) NSURL* link;
+@property (nonatomic, copy) NSString* name;
+
++ (CK_AttachmentInputLink*) attachmentWithLink:(NSURL*) link forName:(NSString*) name;
+@end
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+//@interface CK_AttachmentInputNewFileUpload : CK_AttachmentInput
+//
+//@property (nonatomic, copy) NSString* contentDocumentId;
+//
+//+ (CK_AttachmentInputNewFileUpload*) attachmentWithExistingContent:(NSString*) contentDocumentId;
+//@end
+

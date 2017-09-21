@@ -1,0 +1,175 @@
+<!DOCTYPE html> 
+<html lang="en-US"> 
+<head> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+    <!--
+    <meta name="viewport" content="width=1024" /> 
+	<meta name="viewport" content="width=1024; maximum-scale=1.2;" /> 
+ -->
+	<title>3D Can Concept</title> 
+	<meta name="omni_page" content="HTML5 - 360°" /> 
+	<meta name="Category" content="" /> 
+	<meta name="Description" content="" /> 
+	<script src="Resources/Scripts/threesixty/prototype.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="Resources/Scripts/threesixty/scriptaculous.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="Resources/Scripts/threesixty/browserdetect.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="Resources/Scripts/threesixty/apple_core.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="Resources/Scripts/threesixty/search_decorator.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="Resources/Scripts/threesixty/vr.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="Resources/Scripts/threesixty/library.js" type="text/javascript" charset="utf-8"></script> 
+	<script src="Resources/Scripts/threesixty/threesixty.js" type="text/javascript" charset="utf-8"></script> 
+	<link rel="stylesheet" href="Resources/Scripts/threesixty/base.css" type="text/css" /> 
+	<link rel="stylesheet" href="Resources/Scripts/threesixty/blackout.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="Resources/Scripts/threesixty/html5.css" type="text/css" media="screen" /> 
+ 
+ 
+ 
+	<link rel="stylesheet" href="Resources/Scripts/threesixty/showcase.css" type="text/css" /> 
+ 
+ 
+	<link rel="stylesheet" href="Resources/Scripts/threesixty/threeSixty.css" type="text/css" media="screen" /> 
+	<script type="text/javascript" charset="utf-8">
+	    document.observe("dom:loaded", function () {
+	        if (AC.Detector.isiPad()) {
+	            $('main').addClassName('isipad');
+	        }
+	    });	
+	</script> 
+    <style type="text/css">
+
+    body
+    {
+    	
+        background-color:#white;
+        /*height: 1324px;*/
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica;
+    }
+    
+    .detailsDivClass
+	{
+		opacity: 0;
+		display:none;
+		float: left;
+		-webkit-transition-property: -webkit-transform opacity;
+	    -webkit-transition-duration: 0.5s;
+	    -webkit-transition-timing-function: ease-in-out;	
+	}
+
+	.videoDivClass
+	{
+		opacity: 0;
+		display:none;
+		float: left;
+		-webkit-transition-property: -webkit-transform opacity;
+	    -webkit-transition-duration: 0.5s;
+	    -webkit-transition-timing-function: ease-in-out;	
+	}
+
+	.docListDivClass
+	{
+		opacity: 0;
+		display:none;
+		float: left;
+		-webkit-transition-property: -webkit-transform opacity;
+	    -webkit-transition-duration: 0.5s;
+	    -webkit-transition-timing-function: ease-in-out;	
+	}
+
+	.aboutUsDivClass
+	{
+		color: black;
+		float: left;
+		-webkit-transition-property: -webkit-transform opacity;
+	    -webkit-transition-duration: 0.5s;
+	    -webkit-transition-timing-function: ease-in-out;	
+	}
+
+
+    /*
+    .portrait { width: 768px; height: 960px; }
+    .landscape { width: 1024px; height: 700px; }
+    */
+    </style>
+</head> 
+<body> 
+	<div style="display:block;float:left;">
+		<article id="main" class="content"> 
+			<section id="showcase"> 
+				<div id="html5-showcase" class="showcase"> 
+					<div id="threesixty" class="container"> 
+						
+						<section id="threesixty-main"> 
+							<div id="viewer"></div> 
+						</section> 
+						
+					</d2iv> 
+				</div> 
+			</section> 
+		</article> 
+	</div>
+    <div style="display:block;float:left;background-image:url('Resources/images/greyback.jpg');width:504px;height:595px;">
+    	<div id="detailsDiv" class="detailsDivClass" style="text-align:center;padding-top: 25px;padding-left: 125px;" >
+	    	<!--
+	    	<img src="images/mcola_nutrition.jpg" style="width:300px; height:638px;" />
+	    	-->
+	    	<img src="Resources/images/mcola_nutrition.jpg" style="width:254px; height:541px;" />
+	    </div>
+	    	
+	    <div id="videoDiv" class="videoDivClass" style="padding-left:20px;padding-top: 150px;vertical-align:middle;">
+	    	<video width="463" height="260" controls="controls">
+			  <source src="Resources/video/MM_DreamForce_080311.mp4" type="video/mp4" />
+			  Your browser does not support the video tag.
+			</video>
+	    </div>
+
+	    <div id="docListDiv" class="docListDivClass" style="text-align:left;padding-left:12px;font-size: 20px; padding-top: 135px;width: 480px;float: left;">
+
+	    	<table>
+	    		<tr>
+	    			<td colspan="2" style="font-size: 30px;padding-left:35px;padding-bottom:20px;color:black;text-align:center;">
+	    				<span >Related Content</span>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td style="padding-left:40px;">
+	    				<img src="Resources/images/pdf_logo.png" style="width:70px; height:70px;" />
+	    			</td>
+
+	    			<td style="padding-left:10px;">
+	    				<a href="view:Demo_Starter_Data/DemoDocuments/Items/Collateral - 2GO Customizable Apps_069U0000000KzwFIAS_#1.pdf" >2GO Customizable Apps</a>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td style="padding-left:40px;">
+	    				<img src="Resources/images/pdf_logo.png" style="width:70px; height:70px;" />
+	    			</td>
+
+	    			<td style="padding-left:10px;">
+	    				<a href="view:Demo_Starter_Data/DemoDocuments/Items/Collateral - Digital Sales Aid for iPad_069U0000000KzwAIAS_#1.pdf" >Digital Sales Aid for iPad</a>
+	    			</td>
+	    		</tr>
+	    	</table>
+
+	    	
+	    </div>
+
+	    <div id="aboutUsDiv" class"aboutUsDivClass" style="font-size: 16px; padding-left:40px; padding-top: 100px;width: 420px;float: left;color: black;">
+
+		    		This example demonstrates how you can use HTML5 with a product to make the presentation even more interactive with your clients.
+		   	<br/><br/>
+			<span style="color:red;">You can spin and rotate the can and by interact with it by tapping on the M logo(s) or touching the nutritional information hotspot.</span> This information can then be also tracked within Salesforce.com
+			<br/><br/>
+			This type of HTML5 capability is available as a part of our services offerings to customize our digital sales aid platform to your requirements.
+			<br/><br/>
+			Please contact us at: 1-877-542-2885 or visit our site at www.modelmetrics.com
+    	</div>
+    </div>
+    
+    
+</body> 
+</html>

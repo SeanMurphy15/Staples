@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'RESTLibrary' target in the 'RESTLibrary' project
+//
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+
+	#import <SA_Base/SA_Base.h>
+	#import "MM_Constants.h"
+#endif
+
+
+#define		DYNAMIC_RECORD_LINKING				1
+#define		ALLOW_OBJECT_REMAPPING				1

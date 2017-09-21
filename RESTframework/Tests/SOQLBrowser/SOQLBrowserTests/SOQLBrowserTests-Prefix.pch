@@ -1,0 +1,21 @@
+//
+// Prefix header for all source files of the 'SOQLBrowserTests' target in the 'SOQLBrowserTests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+#define		TESTING				1
+
+
+//Add these header files to your PCH
+
+#import <SA_Base/SA_Base.h>
+#import "MM_Headers.h"
+
+#define			kRemoteAccessConsumerKey			@"3MVG99OxTyEMCQ3jIW9bdxrL5aAIBz8a993UAC3dntUFefeCE.FJeLrZ.Tt.vcR4USTTa2_H3EGJ6Ajt4dFOw"
+#define			kOAuthRedirectURI					@"https://login.salesforce.com/services/oauth2/success"
+#define			kOAuthLoginDomain					@"login.salesforce.com"

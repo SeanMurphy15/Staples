@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the 'RESTStarter' target in the 'RESTStarter' project
+//
+
+#import <Availability.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+#import "SA_Base.h"
+#import "MM_Headers.h"
+
+
+#define			kRemoteAccessConsumerKey			@"3MVG9zeKbAVObYjPyqQFacuFq407hs45kNaeMmx0NNPg8WlW2dCFNu7zXTudpUKpMZ9CPpS83V.hNJfKHcndW"
+#define			kOAuthRedirectURI					@"https://login.salesforce.com/services/oauth2/success"
+#define			kOAuthLoginDomain					@"login.salesforce.com"
+
+
+#define			kNotification_AccountEdited			@"kNotification_AccountEdited"

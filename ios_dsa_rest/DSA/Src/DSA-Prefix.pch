@@ -1,0 +1,29 @@
+//
+// Prefix header for all source files //
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+	
+	#import <SA_Base/SA_Base.h>
+	#import "MM_Headers.h"
+    #import "Branding.h"
+    #import <NewRelicAgent/NewRelic.h>
+#endif
+
+#define	NAMESPACE			@"StaplesDSA_"
+
+#import "MM_Namespaces.h"
+
+#define USE_LIMITED_SF_PROPERTIES_FOR_SYNC 1
+
+#import "DSA_Defines.h"
+#import "PrefixCommon.h"
+
+
+#define	IF_CONTENT_DELETE_TESTING			0
+#define	ALLOW_OBJECT_REMAPPING				1
+#define	DISABLE_DSA_LOGGING					0
+
+
+#define	HTMLBUNDLECONTENTSUPPORTED			1

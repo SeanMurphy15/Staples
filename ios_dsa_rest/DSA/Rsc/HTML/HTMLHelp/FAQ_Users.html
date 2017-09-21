@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<title>DSA FAQs - Users</title>
+<link href="jquery.mobile-1.0b1.min.css" rel="stylesheet" type="text/css">
+<link href="dsa_jquery_css.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="jquery.mobile-1.0b1.min.js"></script>
+<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="jquery.mobile-1.0b1.js"></script>
+
+<meta charset="utf-8">
+</head>
+
+<body>
+<div data-role="page" id="help-home"> 
+    
+   	<div data-role="content">
+   	  <div class="content-FAQ" data-role="collapsible-set" data-inset="true">
+     	 <div data-role="collapsible" data-collapsed="true">
+           <h5>How many categories can I have in the DSA?</h5>
+           <p>Theoretically, the application supports unlimited  categories and products. However, categories can only be two levels deep.</p>
+         </div>
+		<div data-role="collapsible" data-collapsed="true" data-theme="b">
+          <h5>Does Single Sign On (SSO) work with DSA?</h5>
+          <p> If your Salesforce instance is set up to accept your SSO credentials, the DSA app works with SSO and leverages  OAuth2 authentication with those credentials.</p>
+		 </div>
+
+         <div data-role="collapsible" data-collapsed="true">
+          <h5>What information is stored on the iPad?</h5>
+          <p>Your contacts, product categories, and content (images, documents, and videos) are stored on the iPad and automatically updated whenever an Internet connection is detected.</p>
+		 </div>
+
+         <div data-role="collapsible" data-collapsed="true" data-theme="b">
+          <h5>What if an Internet connection is not available in the field?</h5>
+          <p>Since the content from your Salesforce account is stored on the device, all features are available even when Internet connectivity is not.</p>
+		 </div>
+
+         <div data-role="collapsible" data-collapsed="true">
+          <h5>What are the system requirements for running DSA?</h5>
+          <p> DSA has the following requirements for the iPad and Salesforce:</p>
+            <table width="624" border="0" cellpadding="1" cellspacing="1">
+    <tr>
+      <td width="286"><strong>iPad</strong></td>
+      <td width="331"><strong>Salesforce</strong></td>
+    </tr>
+    <tr>
+      <td valign="top"><p>iPad 1 or 2<br>
+        WiFi or 3G model<br>
+        Adequate space on device to store content</p></td>
+      <td>Salesforce license<br>
+        App Exchange package<br>
+        Administrative rights to install package<br>
+        Configuration of DSA through Salesforce (completed by administrator)</td>
+    </tr>
+  </table>
+
+		 </div>
+
+         <div data-role="collapsible" data-collapsed="true" data-theme="b">
+          <h5>Can I send any information to contacts from the application?</h5>
+          <p> Images and documents (PowerPoint presentations, PDF files, Word documents, etc.,) can be forwarded to contacts via e-mail. Please note that a valid e-mail account must be set up on your iPad to use this feature.</p>
+		 </div>
+
+         <div data-role="collapsible" data-collapsed="true">
+          <h5>What if I don't want to allow documents to be emailed?</h5>
+          <p> Permission to e-mail documents is defined in Salesforce.  The document type should be set to  "competitive information" in the Salesforce Content settings.</p>
+		 </div>
+         <div data-role="collapsible" data-collapsed="true" data-theme="b">
+          <h5>How do I customize this app even further?</h5>
+          <p> This app is intentionally built on a framework  allowing Salesforce Services to make substantial customizations  to meet different business needs. We routinely  make further customizations on request.</p>
+		 </div>
+
+
+		</div> <!-- /content FAQ -->
+    
+  </div><!-- /content --> 
+
+<div data-role="footer" data-position="fixed" align="center">
+<h7 class="content-footer"> Digital Sales Aid - Powered by Salesforce Services </h7>
+</div>   	
+    	
+</div><!-- /page -->
+
+
+</body>
+</html>
