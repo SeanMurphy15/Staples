@@ -252,7 +252,6 @@
 		B558AC991847CC340051F3C1 /* CK_UnauthenticatedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B558AC511847CC340051F3C1 /* CK_UnauthenticatedUser.m */; };
 		B558AC9A1847CC340051F3C1 /* CK_UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = B558AC531847CC340051F3C1 /* CK_UserDetail.m */; };
 		B558AC9B1847CC340051F3C1 /* CK_UserSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = B558AC551847CC340051F3C1 /* CK_UserSummary.m */; };
-		B558AC9C1847CC340051F3C1 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558AC571847CC340051F3C1 /* Cordova.framework */; };
 		B558AC9D1847CC340051F3C1 /* Cordova2SharedLibPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B558AC591847CC340051F3C1 /* Cordova2SharedLibPlugin.m */; };
 		B558AC9E1847CC340051F3C1 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B558AC5A1847CC340051F3C1 /* Crashlytics.framework */; };
 		B558AEE01847CC410051F3C1 /* UIImage+NLevelIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = B558ACC21847CC400051F3C1 /* UIImage+NLevelIcons.m */; };
@@ -861,6 +860,7 @@
 		B5E5D4FC188A206A00421827 /* HY_HTML5DemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5D4FA188A206A00421827 /* HY_HTML5DemoController.m */; };
 		B5E5D4FD188A206A00421827 /* HY_HTML5DemoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5D4FB188A206A00421827 /* HY_HTML5DemoController.xib */; };
 		B5E5D4FF188A226F00421827 /* HTML5Demo_Resources in Resources */ = {isa = PBXBuildFile; fileRef = B5E5D4FE188A226F00421827 /* HTML5Demo_Resources */; };
+		D4ADBF871F7C2BED007AAA93 /* libCordovaUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4ADBF861F7C2BED007AAA93 /* libCordovaUniversal.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1738,6 +1738,7 @@
 		B5E5D4FA188A206A00421827 /* HY_HTML5DemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HY_HTML5DemoController.m; sourceTree = "<group>"; };
 		B5E5D4FB188A206A00421827 /* HY_HTML5DemoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HY_HTML5DemoController.xib; sourceTree = "<group>"; };
 		B5E5D4FE188A226F00421827 /* HTML5Demo_Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML5Demo_Resources; sourceTree = "<group>"; };
+		D4ADBF861F7C2BED007AAA93 /* libCordovaUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCordovaUniversal.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1780,8 +1781,8 @@
 				B558ABF01847C78A0051F3C1 /* UIKit.framework in Frameworks */,
 				B589C9B81B90A87D00024204 /* Fabric.framework in Frameworks */,
 				B558ABEC1847C78A0051F3C1 /* Foundation.framework in Frameworks */,
-				B558AC9C1847CC340051F3C1 /* Cordova.framework in Frameworks */,
 				B5D2C5691955D35B0023A5E2 /* SA_Base.framework in Frameworks */,
+				D4ADBF871F7C2BED007AAA93 /* libCordovaUniversal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2401,6 +2402,7 @@
 		B558AC561847CC340051F3C1 /* Cordova */ = {
 			isa = PBXGroup;
 			children = (
+				D4ADBF861F7C2BED007AAA93 /* libCordovaUniversal.a */,
 				B558AC571847CC340051F3C1 /* Cordova.framework */,
 				B558AC581847CC340051F3C1 /* Cordova2SharedLibPlugin.h */,
 				B558AC591847CC340051F3C1 /* Cordova2SharedLibPlugin.m */,
@@ -4852,7 +4854,10 @@
 					"$(MMREST_STAPLES)/Optional/**",
 				);
 				INFOPLIST_FILE = "DSA/Supporting Files/DSA-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Cordova",
+				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -4888,7 +4893,10 @@
 					"$(MMREST_STAPLES)/Optional/**",
 				);
 				INFOPLIST_FILE = "DSA/Supporting Files/DSA-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Cordova",
+				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
