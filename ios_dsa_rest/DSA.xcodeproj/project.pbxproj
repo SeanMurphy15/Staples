@@ -807,7 +807,6 @@
 		B5D2C5681955D35B0023A5E2 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4EF1955D35B0023A5E2 /* libRestKit.a */; };
 		B5D2C5691955D35B0023A5E2 /* SA_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4F01955D35B0023A5E2 /* SA_Base.framework */; };
 		B5D2C56A1955D35B0023A5E2 /* SA_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4F01955D35B0023A5E2 /* SA_Base.framework */; };
-		B5D2C56B1955D35B0023A5E2 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4FD1955D35B0023A5E2 /* libsbjson-ios.a */; };
 		B5D2C56C1955D35C0023A5E2 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4FD1955D35B0023A5E2 /* libsbjson-ios.a */; };
 		B5D2C56D1955D35C0023A5E2 /* SalesforceCommonUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4FF1955D35B0023A5E2 /* SalesforceCommonUtils.framework */; };
 		B5D2C56E1955D35C0023A5E2 /* SalesforceCommonUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4FF1955D35B0023A5E2 /* SalesforceCommonUtils.framework */; };
@@ -1756,7 +1755,6 @@
 				B558ABEE1847C78A0051F3C1 /* CoreGraphics.framework in Frameworks */,
 				B5221E981847D602008976D1 /* AudioToolbox.framework in Frameworks */,
 				B5D2C5631955D35B0023A5E2 /* libssl.a in Frameworks */,
-				B5D2C56B1955D35B0023A5E2 /* libsbjson-ios.a in Frameworks */,
 				9FF4AB1518916FCD00F9AF2E /* QuickLook.framework in Frameworks */,
 				B51FF3181879B4B7005D926E /* AssetsLibrary.framework in Frameworks */,
 				B5D2C56D1955D35C0023A5E2 /* SalesforceCommonUtils.framework in Frameworks */,
