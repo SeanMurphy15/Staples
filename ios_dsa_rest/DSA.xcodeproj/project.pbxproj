@@ -803,7 +803,6 @@
 		B5D2C5641955D35B0023A5E2 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4481955D35B0023A5E2 /* libssl.a */; };
 		B5D2C5651955D35B0023A5E2 /* openssl_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D2C4951955D35B0023A5E2 /* openssl_license.txt */; };
 		B5D2C5661955D35B0023A5E2 /* openssl_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D2C4951955D35B0023A5E2 /* openssl_license.txt */; };
-		B5D2C5671955D35B0023A5E2 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4EF1955D35B0023A5E2 /* libRestKit.a */; };
 		B5D2C5681955D35B0023A5E2 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4EF1955D35B0023A5E2 /* libRestKit.a */; };
 		B5D2C5691955D35B0023A5E2 /* SA_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4F01955D35B0023A5E2 /* SA_Base.framework */; };
 		B5D2C56A1955D35B0023A5E2 /* SA_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D2C4F01955D35B0023A5E2 /* SA_Base.framework */; };
@@ -860,6 +859,7 @@
 		B5E5D4FD188A206A00421827 /* HY_HTML5DemoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5D4FB188A206A00421827 /* HY_HTML5DemoController.xib */; };
 		B5E5D4FF188A226F00421827 /* HTML5Demo_Resources in Resources */ = {isa = PBXBuildFile; fileRef = B5E5D4FE188A226F00421827 /* HTML5Demo_Resources */; };
 		D4ADBF871F7C2BED007AAA93 /* libCordovaUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4ADBF861F7C2BED007AAA93 /* libCordovaUniversal.a */; };
+		D4BC6D2F1F7D5CE200F32ED1 /* libRestKitUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BC6D2E1F7D5CDA00F32ED1 /* libRestKitUniversal.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1738,6 +1738,7 @@
 		B5E5D4FB188A206A00421827 /* HY_HTML5DemoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HY_HTML5DemoController.xib; sourceTree = "<group>"; };
 		B5E5D4FE188A226F00421827 /* HTML5Demo_Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML5Demo_Resources; sourceTree = "<group>"; };
 		D4ADBF861F7C2BED007AAA93 /* libCordovaUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCordovaUniversal.a; sourceTree = "<group>"; };
+		D4BC6D2E1F7D5CDA00F32ED1 /* libRestKitUniversal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRestKitUniversal.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1773,7 +1774,6 @@
 				B5D2C5731955D35C0023A5E2 /* SalesforceOAuth.framework in Frameworks */,
 				B5D2C5751955D35C0023A5E2 /* SalesforceSDKCore.framework in Frameworks */,
 				B5D2C55D1955D35B0023A5E2 /* libsqlcipher.a in Frameworks */,
-				B5D2C5671955D35B0023A5E2 /* libRestKit.a in Frameworks */,
 				B558AC9E1847CC340051F3C1 /* Crashlytics.framework in Frameworks */,
 				B5D2C5711955D35C0023A5E2 /* SalesforceNetworkSDK.framework in Frameworks */,
 				B558ABF01847C78A0051F3C1 /* UIKit.framework in Frameworks */,
@@ -1781,6 +1781,7 @@
 				B558ABEC1847C78A0051F3C1 /* Foundation.framework in Frameworks */,
 				B5D2C5691955D35B0023A5E2 /* SA_Base.framework in Frameworks */,
 				D4ADBF871F7C2BED007AAA93 /* libCordovaUniversal.a in Frameworks */,
+				D4BC6D2F1F7D5CE200F32ED1 /* libRestKitUniversal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3485,6 +3486,7 @@
 			children = (
 				B5D2C4971955D35B0023A5E2 /* include */,
 				B5D2C4EF1955D35B0023A5E2 /* libRestKit.a */,
+				D4BC6D2E1F7D5CDA00F32ED1 /* libRestKitUniversal.a */,
 			);
 			path = RestKit;
 			sourceTree = "<group>";
@@ -3835,6 +3837,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Salesforce;
 				TargetAttributes = {
+					B558ABE71847C78A0051F3C1 = {
+						ProvisioningStyle = Automatic;
+					};
 					B558AC021847C78A0051F3C1 = {
 						TestTargetID = B558ABE71847C78A0051F3C1;
 					};
@@ -4835,7 +4840,9 @@
 				CLANG_MODULES_AUTOLINK = NO;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Staples, INC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Staples, INC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Frameworks/**",
@@ -4862,6 +4869,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -4874,7 +4882,9 @@
 				CLANG_MODULES_AUTOLINK = NO;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Staples, INC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Staples, INC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Frameworks/**",
@@ -4901,6 +4911,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
