@@ -183,7 +183,7 @@ static NSArray				*s_topLevelCategories = nil;
 	
 	if (soapURL == nil) return;
 	
-	SA_Connection		*connection = [SA_Connection connectionWithURL: [NSURL URLWithString: soapURL] payload: soapData method: @"POST" priority: 5 completionBlock: ^(SA_Connection *incoming, int result, NSError *error) {
+	SA_Connection		*connection = [SA_Connection connectionWithURL: [NSURL URLWithString: soapURL] payload: soapData method: @"POST" priority: 5 completionBlock: ^(SA_Connection *incoming, NSInteger result, NSError *error) {
 		NSDictionary			*results = [[[RKXMLParserLibXML alloc] init] parseXML: incoming.dataString];
 		
 		results = [[[[results objectForKey: @"Envelope"] objectForKey: @"Body"] objectForKey: @"getUserInfoResponse"] objectForKey: @"result"];

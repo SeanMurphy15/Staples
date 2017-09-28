@@ -860,6 +860,7 @@
 		B5E5D4FF188A226F00421827 /* HTML5Demo_Resources in Resources */ = {isa = PBXBuildFile; fileRef = B5E5D4FE188A226F00421827 /* HTML5Demo_Resources */; };
 		D4ADBF871F7C2BED007AAA93 /* libCordovaUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4ADBF861F7C2BED007AAA93 /* libCordovaUniversal.a */; };
 		D4BC6D2F1F7D5CE200F32ED1 /* libRestKitUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BC6D2E1F7D5CDA00F32ED1 /* libRestKitUniversal.a */; };
+		D4DB23E21F7D79C6008E6116 /* libRestKitUniversal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BC6D2E1F7D5CDA00F32ED1 /* libRestKitUniversal.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1825,6 +1826,7 @@
 				B5BC717918A0933D00288554 /* CoreGraphics.framework in Frameworks */,
 				B5BC717A18A0933D00288554 /* Crashlytics.framework in Frameworks */,
 				B5D2C5721955D35C0023A5E2 /* SalesforceNetworkSDK.framework in Frameworks */,
+				D4DB23E21F7D79C6008E6116 /* libRestKitUniversal.a in Frameworks */,
 				B5BC717C18A0933D00288554 /* UIKit.framework in Frameworks */,
 				B5BC717D18A0933D00288554 /* Foundation.framework in Frameworks */,
 				B5BC717E18A0933D00288554 /* Cordova.framework in Frameworks */,
