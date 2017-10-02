@@ -3840,6 +3840,7 @@
 				ORGANIZATIONNAME = Salesforce;
 				TargetAttributes = {
 					B558ABE71847C78A0051F3C1 = {
+						DevelopmentTeam = RXHJKR4N7Q;
 						ProvisioningStyle = Automatic;
 					};
 					B558AC021847C78A0051F3C1 = {
@@ -4329,7 +4330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${PLATFORM_NAME}\" != \"iphonesimulator\" ]; then\n    ./Frameworks/Fabric.framework/run 93ae74aec47cd9688f58f4cfd900b8110bb3e13d 5c92368bb96cef0c6048edfce396844b3fda4b5f44d3b17a6f46d85410a977ed\nfi";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -4848,7 +4849,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Staples, INC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RXHJKR4N7Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Frameworks/**",
@@ -4893,7 +4894,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Staples, INC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RXHJKR4N7Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Frameworks/**",
