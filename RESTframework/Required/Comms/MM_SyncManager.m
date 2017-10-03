@@ -373,13 +373,15 @@ SINGLETON_IMPLEMENTATION_FOR_CLASS_AND_METHOD(MM_SyncManager, sharedManager);
 	self.oauthValidationTimer = [NSTimer scheduledTimerWithTimeInterval: 60.0 target: self selector: @selector(oauthValidationTimedOut:) userInfo: nil repeats: NO];
 	
 	SFRestRequest				*request = [[SFRestAPI sharedInstance] requestForRetrieveWithObjectType: @"User" objectId: [SFOAuthCoordinator fullUserId] fieldList: @"Id"];
+    NSLog(@"%@",[SFOAuthCoordinator fullUserId]);
 	__weak MM_RestOperation		*restOp = [MM_RestOperation operationWithRequest: request completionBlock: nil sourceTag: CURRENT_FILE_TAG];
 	
 	
 	
 	restOp.completionBlock = ^(NSError *error, id jsonResponse, MM_RestOperation *completedOp) {
 		[self.oauthValidationTimer invalidate];
-		
+		NSLog(@"%@",jsonResponse);
+        NSLog(@"%@",error.localizedDescription);
 		self.validationOperation = nil;
 		if (error == nil) {
 			MMLog(@"Got a valid OAuth connection %@", @"");
@@ -409,7 +411,7 @@ SINGLETON_IMPLEMENTATION_FOR_CLASS_AND_METHOD(MM_SyncManager, sharedManager);
 - (void) oauthValidationTimedOut: (NSTimer *) timer {
 	if (timer) MMLog(@"Validation timed out", @"");
 	self.oauthValidationTimer = nil;
-	[self fireOAuthCompletionBlocks: NO];
+	[self fireOAuthCompletionBlocks: YES];
 	[self cancelSync: mm_sync_cancel_reason_auth_failed];
 	if (![SA_ConnectionQueue sharedQueue].offline) [MM_LoginViewController logout];
 }

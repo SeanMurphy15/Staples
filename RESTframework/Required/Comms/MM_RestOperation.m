@@ -377,7 +377,7 @@ static NSString 						*s_APIVersion = @"32.0";
 	});
 }
 
-- (void) completeWithResponse: (NSHTTPURLResponse *) response andJSON: (id) jsonResponse {
+- (void) completeWithResponse: (SFNetworkOperation *) response andJSON: (id) jsonResponse {
 	self.isRunning = NO;
 	self.completed = YES;
 	self.sfdcHeaderDate = [NSDate dateWithHTTPHeaderString: response.allHeaderFields[@"Date"]];
